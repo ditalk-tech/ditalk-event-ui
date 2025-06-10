@@ -88,7 +88,7 @@
             </el-form-item>
             <el-form-item label="开放状态" prop="openState">
               <el-select v-model="queryParams.openState" placeholder="请选择开放状态" clearable >
-                <el-option v-for="dict in member_open_state" :key="dict.value" :label="dict.label" :value="dict.value"/>
+                <el-option v-for="dict in ditalk_member_open_state" :key="dict.value" :label="dict.label" :value="dict.value"/>
               </el-select>
             </el-form-item>
             <el-form-item>
@@ -159,7 +159,7 @@
         <el-table-column label="简介" align="center" prop="profile" />
         <el-table-column label="开放状态" align="center" prop="openState">
           <template #default="scope">
-            <dict-tag :options="member_open_state" :value="scope.row.openState"/>
+            <dict-tag :options="ditalk_member_open_state" :value="scope.row.openState"/>
           </template>
         </el-table-column>
         <el-table-column label="最后登录IP" align="center" prop="loginIp" />
@@ -250,7 +250,7 @@
         <el-form-item label="开放状态" prop="openState">
           <el-select v-model="form.openState" placeholder="请选择开放状态">
             <el-option
-                v-for="dict in member_open_state"
+                v-for="dict in ditalk_member_open_state"
                 :key="dict.value"
                 :label="dict.label"
                 :value="dict.value"
@@ -300,7 +300,7 @@ import { listInfo, getInfo, delInfo, addInfo, updateInfo } from '@/api/member/in
 import { InfoVO, InfoQuery, InfoForm } from '@/api/member/info/types';
 
 const { proxy } = getCurrentInstance() as ComponentInternalInstance;
-const { sys_user_sex, sys_normal_disable, member_open_state } = toRefs<any>(proxy?.useDict('sys_user_sex', 'sys_normal_disable', 'member_open_state'));
+const { sys_user_sex, sys_normal_disable, ditalk_member_open_state } = toRefs<any>(proxy?.useDict('sys_user_sex', 'sys_normal_disable', 'ditalk_member_open_state'));
 
 const infoList = ref<InfoVO[]>([]);
 const buttonLoading = ref(false);
