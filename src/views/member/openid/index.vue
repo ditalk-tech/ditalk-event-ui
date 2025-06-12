@@ -92,8 +92,8 @@
       <pagination v-show="total > 0" :total="total" v-model:page="queryParams.pageNum" v-model:limit="queryParams.pageSize" @pagination="getList" />
     </el-card>
     <!-- 添加或修改会员OpenId对话框 -->
-    <el-dialog :title="dialog.title" v-model="dialog.visible" width="500px" append-to-body>
-      <el-form ref="openidFormRef" :model="form" :rules="rules" label-width="80px">
+    <el-dialog :title="dialog.title" v-model="dialog.visible" width="960px" append-to-body>
+      <el-form ref="openidFormRef" :model="form" :rules="rules" label-width="120px">
         <el-form-item label="会员ID" prop="memberId">
           <el-input v-model="form.memberId" placeholder="请输入会员ID" />
         </el-form-item>
