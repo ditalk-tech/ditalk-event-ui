@@ -27,7 +27,7 @@ export interface InfoVO {
   /**
    * 配置项键
    */
-  key: string;
+  code: string;
 
   /**
    * 配置项JSON值
@@ -65,7 +65,7 @@ export interface InfoForm extends BaseEntity {
   /**
    * 配置项键
    */
-  key?: string;
+  code?: string;
 
   /**
    * 配置项JSON值
@@ -104,7 +104,7 @@ export interface InfoQuery extends PageQuery {
   /**
    * 配置项键
    */
-  key?: string;
+  code?: string;
 
   /**
    * 配置项JSON值

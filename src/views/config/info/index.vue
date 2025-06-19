@@ -26,8 +26,8 @@
             <el-form-item label="配置名称" prop="name">
               <el-input v-model="queryParams.name" placeholder="请输入配置项名称" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="配置键" prop="key">
-              <el-input v-model="queryParams.key" placeholder="请输入配置项键" clearable @keyup.enter="handleQuery" />
+            <el-form-item label="配置键" prop="code">
+              <el-input v-model="queryParams.code" placeholder="请输入配置项键" clearable @keyup.enter="handleQuery" />
             </el-form-item>
             <!-- <el-form-item label="配置项JSON值" prop="value">
               <el-input v-model="queryParams.value" placeholder="请输入配置项JSON值" clearable @keyup.enter="handleQuery" />
@@ -74,7 +74,7 @@
           </template>
         </el-table-column>
         <el-table-column label="配置名称" align="center" prop="name" />
-        <el-table-column label="配置键" align="center" prop="key" />
+        <el-table-column label="配置键" align="center" prop="code" />
         <!-- <el-table-column label="配置项JSON值" align="center" prop="value" /> -->
         <el-table-column label="备注" align="center" prop="remark" />
         <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
@@ -107,8 +107,8 @@
         <el-form-item label="配置名称" prop="name">
           <el-input v-model="form.name" placeholder="请输入配置项名称" />
         </el-form-item>
-        <el-form-item label="配置键" prop="key">
-          <el-input v-model="form.key" placeholder="请输入配置项键" />
+        <el-form-item label="配置键" prop="code">
+          <el-input v-model="form.code" placeholder="请输入配置项键" />
         </el-form-item>
         <el-form-item label="配置JSON值" prop="value">
             <el-input v-model="form.value" type="textarea" placeholder="请输入内容" />
@@ -157,7 +157,7 @@ const initFormData: InfoForm = {
   version: undefined,
   state: undefined,
   name: undefined,
-  key: undefined,
+  code: undefined,
   value: undefined,
   remark: undefined
 }
@@ -169,7 +169,7 @@ const data = reactive<PageData<InfoForm, InfoQuery>>({
     id: undefined,
     state: undefined,
     name: undefined,
-    key: undefined,
+    code: undefined,
     value: undefined,
     params: {
       createTime: undefined,
@@ -185,7 +185,7 @@ const data = reactive<PageData<InfoForm, InfoQuery>>({
     name: [
       { required: true, message: "配置项名称不能为空", trigger: "blur" }
     ],
-    key: [
+    code: [
       { required: true, message: "配置项键不能为空", trigger: "blur" }
     ],
     value: [
