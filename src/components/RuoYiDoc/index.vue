@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-const url = ref('https://plus-doc.dromara.org/');
+const url = ref('https://gitee.com/ditalk/ditalk-event-boot/');
 
 function goto() {
   window.open(url.value);
