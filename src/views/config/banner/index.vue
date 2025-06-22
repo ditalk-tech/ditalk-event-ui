@@ -7,7 +7,7 @@
     </div>
     <el-form ref="formRef" :model="form" :rules="rules" label-width="200px">
       <el-form-item label="横幅图片" prop="ossId">
-        <image-upload-one v-model="form.ossId" />
+        <image-upload v-model="form.ossId" :limit="1" />
         <el-tooltip content="建议图片比例为 16:9" placement="top" effect="light">
           <el-icon>
             <QuestionFilled />
