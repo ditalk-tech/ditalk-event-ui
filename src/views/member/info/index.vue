@@ -71,6 +71,11 @@
                 :default-time="[new Date(2000, 1, 1, 0, 0, 0), new Date(2000, 1, 1, 23, 59, 59)]"
               />
             </el-form-item>
+            <el-form-item label="婚姻状况" prop="maritalStatus">
+              <el-select v-model="queryParams.maritalStatus" placeholder="请选择婚姻状况" clearable >
+                <el-option v-for="dict in ditalk_marital_status" :key="dict.value" :label="dict.label" :value="dict.value"/>
+              </el-select>
+            </el-form-item>
             <!-- <el-form-item label="身高" prop="tall">
               <el-input v-model="queryParams.tall" placeholder="请输入身高" clearable @keyup.enter="handleQuery" />
             </el-form-item> -->
@@ -151,6 +156,11 @@
             <span>{{ parseTime(scope.row.birthday, '{y}-{m}-{d}') }}</span>
           </template>
         </el-table-column>
+        <el-table-column label="婚姻状况" align="center" prop="maritalStatus">
+          <template #default="scope">
+            <dict-tag :options="ditalk_marital_status" :value="scope.row.maritalStatus"/>
+          </template>
+        </el-table-column>
         <el-table-column label="身高" align="center" prop="tall" />
         <el-table-column label="学历" align="center" prop="qualification" />
         <el-table-column label="工作" align="center" prop="career" />
@@ -197,7 +207,7 @@
           <el-input v-model="form.nickName" placeholder="请输入昵称" />
         </el-form-item>
         <el-form-item label="头像ID" prop="avatar">
-          <image-upload v-model="form.avatar"/>
+          <image-upload v-model="form.avatar" :limit="1" />
         </el-form-item>
         <el-form-item label="小程序头像" prop="xcxAvatar">
           <el-input v-model="form.xcxAvatar" placeholder="请输入小程序头像" />
@@ -228,6 +238,16 @@
             value-format="YYYY-MM-DD HH:mm:ss"
             placeholder="请选择生日">
           </el-date-picker>
+        </el-form-item>
+        <el-form-item label="婚姻状况" prop="maritalStatus">
+          <el-select v-model="form.maritalStatus" placeholder="请选择婚姻状况">
+            <el-option
+                v-for="dict in ditalk_marital_status"
+                :key="dict.value"
+                :label="dict.label"
+                :value="dict.value"
+            ></el-option>
+          </el-select>
         </el-form-item>
         <el-form-item label="身高" prop="tall">
           <el-input v-model="form.tall" placeholder="请输入身高" />
@@ -300,7 +320,7 @@ import { listInfo, getInfo, delInfo, addInfo, updateInfo } from '@/api/member/in
 import { InfoVO, InfoQuery, InfoForm } from '@/api/member/info/types';
 
 const { proxy } = getCurrentInstance() as ComponentInternalInstance;
-const { sys_user_sex, sys_normal_disable, ditalk_member_open_state } = toRefs<any>(proxy?.useDict('sys_user_sex', 'sys_normal_disable', 'ditalk_member_open_state'));
+const { sys_user_sex, sys_normal_disable, ditalk_member_open_state, ditalk_marital_status } = toRefs<any>(proxy?.useDict('sys_user_sex', 'sys_normal_disable', 'ditalk_member_open_state', 'ditalk_marital_status'));
 
 const infoList = ref<InfoVO[]>([]);
 const buttonLoading = ref(false);
@@ -338,6 +358,7 @@ const initFormData: InfoForm = {
   loginIp: undefined,
   loginDate: undefined,
   birthday: undefined,
+  maritalStatus: undefined,
   tall: undefined,
   qualification: undefined,
   career: undefined,
@@ -363,6 +384,7 @@ const data = reactive<PageData<InfoForm, InfoQuery>>({
     phoneNumber: undefined,
     sex: undefined,
     loginIp: undefined,
+    maritalStatus: undefined,
     tall: undefined,
     qualification: undefined,
     career: undefined,

@@ -84,6 +84,11 @@ export interface InfoVO {
   birthday: string;
 
   /**
+   * 婚姻状况
+   */
+  maritalStatus: string;
+
+  /**
    * 身高
    */
   tall: number;
@@ -207,6 +212,11 @@ export interface InfoForm extends BaseEntity {
   birthday?: string;
 
   /**
+   * 婚姻状况
+   */
+  maritalStatus?: string;
+
+  /**
    * 身高
    */
   tall?: number;
@@ -319,6 +329,11 @@ export interface InfoQuery extends PageQuery {
    * 生日
    */
   birthday?: string;
+
+  /**
+   * 婚姻状况
+   */
+  maritalStatus?: string;
 
   /**
    * 身高
