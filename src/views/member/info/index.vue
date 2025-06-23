@@ -77,8 +77,8 @@
             <el-form-item label="学历" prop="qualification">
               <el-input v-model="queryParams.qualification" placeholder="请输入学历" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="工作" prop="carrer">
-              <el-input v-model="queryParams.carrer" placeholder="请输入工作" clearable @keyup.enter="handleQuery" />
+            <el-form-item label="工作" prop="career">
+              <el-input v-model="queryParams.career" placeholder="请输入工作" clearable @keyup.enter="handleQuery" />
             </el-form-item>
             <el-form-item label="籍贯" prop="placeOfOrigin">
               <el-input v-model="queryParams.placeOfOrigin" placeholder="请输入籍贯" clearable @keyup.enter="handleQuery" />
@@ -153,7 +153,7 @@
         </el-table-column>
         <el-table-column label="身高" align="center" prop="tall" />
         <el-table-column label="学历" align="center" prop="qualification" />
-        <el-table-column label="工作" align="center" prop="carrer" />
+        <el-table-column label="工作" align="center" prop="career" />
         <el-table-column label="籍贯" align="center" prop="placeOfOrigin" />
         <el-table-column label="爱好" align="center" prop="hobby" />
         <el-table-column label="简介" align="center" prop="profile" />
@@ -235,8 +235,8 @@
         <el-form-item label="学历" prop="qualification">
           <el-input v-model="form.qualification" placeholder="请输入学历" />
         </el-form-item>
-        <el-form-item label="工作" prop="carrer">
-          <el-input v-model="form.carrer" placeholder="请输入工作" />
+        <el-form-item label="工作" prop="career">
+          <el-input v-model="form.career" placeholder="请输入工作" />
         </el-form-item>
         <el-form-item label="籍贯" prop="placeOfOrigin">
           <el-input v-model="form.placeOfOrigin" placeholder="请输入籍贯" />
@@ -340,7 +340,7 @@ const initFormData: InfoForm = {
   birthday: undefined,
   tall: undefined,
   qualification: undefined,
-  carrer: undefined,
+  career: undefined,
   placeOfOrigin: undefined,
   hobby: undefined,
   profile: undefined,
@@ -365,7 +365,7 @@ const data = reactive<PageData<InfoForm, InfoQuery>>({
     loginIp: undefined,
     tall: undefined,
     qualification: undefined,
-    carrer: undefined,
+    career: undefined,
     placeOfOrigin: undefined,
     hobby: undefined,
     openState: undefined,

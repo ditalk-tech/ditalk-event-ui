@@ -96,7 +96,7 @@ export interface InfoVO {
   /**
    * 工作
    */
-  carrer: string;
+  career: string;
 
   /**
    * 籍贯
@@ -219,7 +219,7 @@ export interface InfoForm extends BaseEntity {
   /**
    * 工作
    */
-  carrer?: string;
+  career?: string;
 
   /**
    * 籍贯
@@ -333,7 +333,7 @@ export interface InfoQuery extends PageQuery {
   /**
    * 工作
    */
-  carrer?: string;
+  career?: string;
 
   /**
    * 籍贯
