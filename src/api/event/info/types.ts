@@ -59,9 +59,9 @@ export interface InfoVO {
   arrangement: string;
 
   /**
-   * 会员IDs
+   * 报名会员快照
    */
-  memberIds: string | number;
+  members: string | number;
 
   /**
    * 备注信息
@@ -132,9 +132,9 @@ export interface InfoForm extends BaseEntity {
   arrangement?: string;
 
   /**
-   * 会员IDs
+   * 报名会员快照
    */
-  memberIds?: string | number;
+  members?: string | number;
 
   /**
    * 备注信息

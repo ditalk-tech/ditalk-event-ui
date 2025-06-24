@@ -106,7 +106,7 @@
         <el-table-column label="名额" align="center" prop="quota" />
         <el-table-column label="地点" align="center" prop="location" />
         <el-table-column label="活动安排" align="center" prop="arrangement" width="300" />
-        <!-- <el-table-column label="会员IDs" align="center" prop="memberIds" /> -->
+        <!-- <el-table-column label="报名会员快照" align="center" prop="members" /> -->
         <!-- <el-table-column label="备注信息" align="center" prop="remark" /> -->
         <!-- <el-table-column label="扩展信息" align="center" prop="exInfo" /> -->
         <el-table-column label="状态" align="center" prop="state">
@@ -170,8 +170,8 @@
         <el-form-item label="活动安排" prop="arrangement">
             <el-input v-model="form.arrangement" type="textarea" placeholder="请输入内容" />
         </el-form-item>
-        <el-form-item label="会员IDs" prop="memberIds">
-            <el-input v-model="form.memberIds" type="textarea" placeholder="请输入内容" />
+        <el-form-item label="报名会员快照" prop="members">
+            <el-input v-model="form.members" type="textarea" placeholder="请输入内容" />
         </el-form-item>
         <el-form-item label="备注信息">
           <editor v-model="form.remark" :min-height="192"/>
@@ -239,7 +239,7 @@ const initFormData: InfoForm = {
   quota: undefined,
   location: undefined,
   arrangement: undefined,
-  memberIds: undefined,
+  members: undefined,
   remark: undefined,
   exInfo: undefined,
   state: undefined
