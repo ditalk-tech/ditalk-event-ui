@@ -25,6 +25,11 @@ export interface MemberVO {
   startTime: string;
 
   /**
+   * 签到码
+   */
+  signCode: number;
+
+  /**
    * 会员ID
    */
   memberId: string | number;
@@ -61,6 +66,11 @@ export interface MemberForm extends BaseEntity {
    * 开始时间
    */
   startTime?: string;
+
+  /**
+   * 签到码
+   */
+  signCode?: number;
 
   /**
    * 状态

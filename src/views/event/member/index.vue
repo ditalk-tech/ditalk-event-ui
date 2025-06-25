@@ -64,6 +64,7 @@
         <el-table-column label="活动ID" align="center" prop="eventId" />
         <el-table-column label="会员ID" align="center" prop="memberId" />
         <el-table-column label="开始时间" align="center" prop="startTime" width="180" />
+        <el-table-column label="签到码" align="center" prop="signCode" />
         <el-table-column label="状态" align="center" prop="state">
           <template #default="scope">
             <dict-tag :options="sys_normal_disable" :value="scope.row.state"/>
@@ -99,6 +100,9 @@
             value-format="YYYY-MM-DD HH:mm:ss"
             placeholder="请选择开始时间">
           </el-date-picker>
+        </el-form-item>
+        <el-form-item label="签到码" prop="signCode">
+          <el-input v-model="form.signCode" placeholder="请输入签到码" />
         </el-form-item>
         <el-form-item label="状态" prop="state">
           <el-select v-model="form.state" placeholder="请选择状态">
@@ -152,6 +156,7 @@ const initFormData: MemberForm = {
   eventId: undefined,
   memberId: undefined,
   startTime: undefined,
+  signCode: undefined,
   state: undefined
 }
 const data = reactive<PageData<MemberForm, MemberQuery>>({
@@ -179,6 +184,9 @@ const data = reactive<PageData<MemberForm, MemberQuery>>({
     ],
     startTime: [
       { required: true, message: "开始时间不能为空", trigger: "blur" }
+    ],
+    signCode: [
+      { required: true, message: "签到码不能为空", trigger: "blur" }
     ],
     state: [
       { required: true, message: "状态不能为空", trigger: "change" }
