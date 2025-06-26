@@ -1,83 +1,106 @@
-## 平台简介
+# DiTalk.tech 活动管理系统
 
-- 本仓库为前端技术栈 [Vue3](https://v3.cn.vuejs.org) + [TS](https://www.typescriptlang.org/) + [Element Plus](https://element-plus.org/zh-CN) + [Vite](https://cn.vitejs.dev) 版本。
-- 成员项目: 基于 vben5(ant-design-vue) 的前端项目 [ruoyi-plus-vben5](https://gitee.com/dapppp/ruoyi-plus-vben5)
-- 成员项目: 基于soybean 的前端项目 [ruoyi-plus-soybean](https://gitee.com/xlsea/ruoyi-plus-soybean)
+[![码云Gitee](https://gitee.com/ditalk/ditalk-event-boot/badge/star.svg)](https://gitee.com/ditalk/ditalk-event-boot)
+[![GitHub](https://img.shields.io/github/stars/ditalk-tech/ditalk-event-boot.svg)](https://github.com/ditalk-tech/ditalk-event-boot)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)](https://gitee.com/weidixian/ditalk-plus/blob/master/LICENSE)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4-blue.svg)]()
+[![JDK-17](https://img.shields.io/badge/JDK-17-green.svg)]()
+[![JDK-21](https://img.shields.io/badge/JDK-21-green.svg)]()
+[![RuoYi-Vue-Plus](https://img.shields.io/badge/RuoYi_Vue_Plus-5.4.0-success.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus)
 
-## 配套后端代码仓库地址
+## 系统简介
 
-| 介绍         | 项目名              | 项目地址                                                                                                                                                                           |
-|------------|:-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 🔥 分布式集群框架 | RuoYi-Vue-Plus   | - [Gitee](https://gitee.com/dromara/RuoYi-Vue-Plus)<br> - [GitHub](https://github.com/dromara/RuoYi-Vue-Plus)<br> - [GitCode](https://gitcode.com/dromara/RuoYi-Vue-Plus)      |
-| 🔥 微服务框架   | RuoYi-Cloud-Plus | - [Gitee](https://gitee.com/dromara/RuoYi-Cloud-Plus)<br>- [GitHub](https://github.com/dromara/RuoYi-Cloud-Plus)<br> - [GitCode](https://gitcode.com/dromara/RuoYi-Cloud-Plus) |
+本系统基于 SpringBoot 框架开发，采用前后端分离架构，涵盖后台接口、VUE 管理后台和 UniApp 用户端三大模块。
+系统支持活动创建、发布、审核、数据统计等全流程管控；
+UniApp 用户端适配多端，方便用户随时随地浏览活动详情、在线报名与互动。
+系统能够自由拓展功能，无论是企业组织团建、社团策划活动，还是个人发起社交聚会，都能通过该系统实现高效管理与便捷参与，为活动组织者与参与者搭建起数字化、智能化的沟通桥梁。
 
-## 分支说明
+> 系统演示：[传送门](https://ditalk.tech/) 建设中...
 
-- ts分支(稳定发布主分支 生产可用)
-- dev分支(开发分支 开发过程中使用)
+> 管理后台地址：[Gitee](https://gitee.com/ditalk/ditalk-event-boot)   -- [Github](https://github.com/ditalk-tech/ditalk-event-boot) <br>
+> 后台前端地址：[Gitee](https://gitee.com/ditalk/ditalk-event-ui)     -- [Github](https://github.com/ditalk-tech/ditalk-event-ui) <br>
+> 用户前端地址：[Gitee](https://gitee.com/ditalk/ditalk-event-uniapp) -- [Github](https://github.com/ditalk-tech/ditalk-event-uniapp) <br>
 
-## 前端运行
+---
 
-```bash
-# 安装依赖
-npm install --registry=https://registry.npmmirror.com
+# 系统说明
 
-# 启动服务
-npm run dev
+本项目基于 [RuoYi-Vue-Plus](https://gitee.com/dromara/RuoYi-Vue-Plus) 进行开发，原项目遵循 MIT 协议。
 
-# 构建生产环境
-npm run build:prod
+本项目遵循 Apache 2.0 协议，DiTalk 对本项目的修改和新增内容拥有版权。
 
-# 前端访问地址 http://localhost:80
-```
+> [RuoYi-Vue-Plus 完整文档](https://plus-doc.dromara.org)
+>
+> [项目初始化方法](https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/init)
+> 
+> 注意数据库初始化使用 **ditalk-db.sql** 文件
 
-## 本框架与RuoYi的业务差异
+## 软件架构图
 
-| 业务         | 功能说明                                                      | 本框架 | RuoYi                         |
-| ------------ | ------------------------------------------------------------- | ------ | ----------------------------- |
-| 租户管理     | 系统内租户的管理 如:租户套餐、过期时间、用户数量、企业信息等  | 支持   | 无                            |
-| 租户套餐管理 | 系统内租户所能使用的套餐管理 如:套餐内所包含的菜单等          | 支持   | 无                            |
-| 用户管理     | 用户的管理配置 如:新增用户、分配用户所属部门、角色、岗位等    | 支持   | 支持                          |
-| 部门管理     | 配置系统组织机构（公司、部门、小组） 树结构展现支持数据权限   | 支持   | 支持                          |
-| 岗位管理     | 配置系统用户所属担任职务                                      | 支持   | 支持                          |
-| 菜单管理     | 配置系统菜单、操作权限、按钮权限标识等                        | 支持   | 支持                          |
-| 角色管理     | 角色菜单权限分配、设置角色按机构进行数据范围权限划分          | 支持   | 支持                          |
-| 字典管理     | 对系统中经常使用的一些较为固定的数据进行维护                  | 支持   | 支持                          |
-| 参数管理     | 对系统动态配置常用参数                                        | 支持   | 支持                          |
-| 通知公告     | 系统通知公告信息发布维护                                      | 支持   | 支持                          |
-| 操作日志     | 系统正常操作日志记录和查询 系统异常信息日志记录和查询         | 支持   | 支持                          |
-| 登录日志     | 系统登录日志记录查询包含登录异常                              | 支持   | 支持                          |
-| 文件管理     | 系统文件展示、上传、下载、删除等管理                          | 支持   | 无                            |
-| 文件配置管理 | 系统文件上传、下载所需要的配置信息动态添加、修改、删除等管理  | 支持   | 无                            |
-| 在线用户管理 | 已登录系统的在线用户信息监控与强制踢出操作                    | 支持   | 支持                          |
-| 定时任务     | 运行报表、任务管理(添加、修改、删除)、日志管理、执行器管理等  | 支持   | 仅支持任务与日志管理          |
-| 代码生成     | 多数据源前后端代码的生成（java、html、xml、sql）支持CRUD下载  | 支持   | 仅支持单数据源                |
-| 系统接口     | 根据业务代码自动生成相关的api接口文档                         | 支持   | 支持                          |
-| 服务监控     | 监视集群系统CPU、内存、磁盘、堆栈、在线日志、Spring相关配置等 | 支持   | 仅支持单机CPU、内存、磁盘监控 |
-| 缓存监控     | 对系统的缓存信息查询，命令统计等。                            | 支持   | 支持                          |
-| 在线构建器   | 拖动表单元素生成相应的HTML代码。                              | 支持   | 支持                          |
-| 使用案例     | 系统的一些功能案例                                            | 支持   | 不支持                        |
+![Plus部署架构图](https://foruda.gitee.com/images/1678981882624240692/ae2a3f3e_1766278.png "Plus部署架构图.png")
 
-## 演示图例
+## 快速部署
 
-|                                                                                                      |                                                                                                      |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| ![输入图片说明](https://foruda.gitee.com/images/1680077524361362822/270bb429_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680077619939771291/989bf9b6_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680077681751513929/1c27c5bd_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680077721559267315/74d63e23_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680077765638904515/1b75d4a6_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078026375951297/eded7a4b_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078237104531207/0eb1b6a7_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078254306078709/5931e22f_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078287971528493/0b9af60a_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078308138770249/8d3b6696_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078352553634393/db5ef880_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078378238393374/601e4357_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078414983206024/2aae27c1_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078446738419874/ecce7d59_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078475971341775/149e8634_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078491666717143/3fadece7_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078558863188826/fb8ced2a_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078574561685461/ae68a0b2_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078594932772013/9d8bfec6_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078626493093532/fcfe4ff6_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078643608812515/0295bd4f_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078685196286463/d7612c81_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078703877318597/56fce0bc_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078716586545643/b6dbd68f_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078734103217688/eb1e6aa6_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078759131415480/73c525d8_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078779416197879/75e3ed02_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078802329118061/77e10915_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078893627848351/34a1c342_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078928175016986/f126ec4a_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078941718318363/b68a0f72_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680078963175518631/3bb769a1_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078982294090567/b31c343d_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680079000642440444/77ca82a9_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680079020995074177/03b7d52e_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680079039367822173/76811806_1766278.png '屏幕截图') |
-| ![输入图片说明](https://foruda.gitee.com/images/1680079274333484664/4dfdc7c0_1766278.png '屏幕截图') | ![输入图片说明](https://foruda.gitee.com/images/1680079290467458224/d6715fcf_1766278.png '屏幕截图') |
+大致步骤如下：（注意运行环境参考：[RuoYi-Vue-Plus 运行环境](https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/deploy)）
+
+1. 初始化数据库
+2. 打包后台代码
+3. 配置并启动后台
+4. 打包发布后台UI
+5. 配置OSS服务参数
+6. 配置小程序参数
+7. 配置小程序横幅
+8. 发布小程序
+
+## 如何获取定制功能
+
+添加微信告诉我你的需要。**微信号：ditalk_tech**
+
+或发邮件到：[ditalk@163.com](mailto:ditalk@163.com)
+
+## 如何联系 (添加微信)
+
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLVDx.jpg" alt="OVLVDx.jpg" border="0" style="width: 280px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLY6j.jpg" alt="OVLY6j.jpg" border="0" style="width: 280px">
+
+## 完善项目
+
+收藏、点赞，到 Issues 提交需求。
+
+## 完整版演示图例
+
+### 用户端
+
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLmAb.jpg" alt="OVLmAb.jpg" border="0" style="width: 260px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLgqP.jpg" alt="OVLgqP.jpg" border="0" style="width: 260px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLvV6.jpg" alt="OVLvV6.jpg" border="0" style="width: 260px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLZmF.jpg" alt="OVLZmF.jpg" border="0" style="width: 260px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLKbD.jpg" alt="OVLKbD.jpg" border="0" style="width: 260px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLr2I.jpg" alt="OVLr2I.jpg" border="0" style="width: 260px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLe41.jpg" alt="OVLe41.jpg" border="0" style="width: 260px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLNiG.jpg" alt="OVLNiG.jpg" border="0" style="width: 260px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVL1CM.jpg" alt="OVL1CM.jpg" border="0" style="width: 260px">
+
+### 管理后台
+
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLt4s.jpg" alt="OVLt4s.jpg" border="0" style="width: 600px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLJCg.jpg" alt="OVLJCg.jpg" border="0" style="width: 600px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLRnB.jpg" alt="OVLRnB.jpg" border="0" style="width: 600px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLpQl.jpg" alt="OVLpQl.jpg" border="0" style="width: 600px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVL46K.jpg" alt="OVL46K.jpg" border="0" style="width: 600px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLSAL.jpg" alt="OVLSAL.jpg" border="0" style="width: 600px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLQqC.jpg" alt="OVLQqC.jpg" border="0" style="width: 600px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLLmS.jpg" alt="OVLLmS.jpg" border="0" style="width: 600px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLEYN.jpg" alt="OVLEYN.jpg" border="0" style="width: 600px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLHka.jpg" alt="OVLHka.jpg" border="0" style="width: 600px">
+
+## 捐献作者
+
+开源不易，谢谢你的每一分支持。
+
+<img src="https://ooo.0x0.ooo/2025/06/26/OVL9pU.jpg" alt="OVL9pU.jpg" border="0" style="width: 250px">
+<img src="https://ooo.0x0.ooo/2025/06/26/OVLlkp.jpg" alt="OVLlkp.jpg" border="0" style="width: 250px">
+
+---
+
+版权所有 (c) 2025 DiTalk.tech
