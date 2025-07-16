@@ -158,7 +158,7 @@
         </el-table-column>
         <el-table-column label="婚姻状况" align="center" prop="maritalStatus">
           <template #default="scope">
-            <dict-tag :options="ditalk_marital_status" :value="scope.row.maritalStatus"/>
+            <dict-tag :options="ditalk_marital_status" :value="scope.row.maritalStatus || 'unknow'"/>
           </template>
         </el-table-column>
         <el-table-column label="身高" align="center" prop="tall" />
